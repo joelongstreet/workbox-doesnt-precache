@@ -4,7 +4,7 @@
       import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-window.prod.mjs';
       
       if ('serviceWorker' in navigator) {
-        const workbox = new Workbox('/sw.js');
+        const workbox = new Workbox('sw.js');
         workbox.register();
         workbox.messageSW({
           type: 'cache',
