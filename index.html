@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script type="module">
+      import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-window.prod.mjs';
+      
+      if ('serviceWorker' in navigator) {
+        const workbox = new Workbox('/sw.js');
+        workbox.register();
+        workbox.messageSW({
+          type: 'cache',
+          payload: [
+            'https://media0.giphy.com/media/Ju7l5y9osyymQ/giphy.gif',
+          ],
+        });
+      }
+      </script>
+  </head>
+</html>
