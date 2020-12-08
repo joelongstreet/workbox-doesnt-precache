@@ -1,5 +1,4 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js');
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-precaching.dev.js');
 
 const context = self;
 
