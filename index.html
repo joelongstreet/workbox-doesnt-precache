@@ -8,9 +8,10 @@
         workbox.register();
         workbox.messageSW({
           type: 'cache',
-          payload: [
-            'https://media0.giphy.com/media/Ju7l5y9osyymQ/giphy.gif',
-          ],
+          payload: [{
+            url: 'https://media0.giphy.com/media/Ju7l5y9osyymQ/giphy.gif',
+            revision: null,
+          }]
         });
       }
       </script>

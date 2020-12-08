@@ -22,17 +22,17 @@ context.addEventListener('fetch', async (event) => {
 context.addEventListener('message', ({ data }) => {
   const { type, payload } = data;
 
+  // This doesn't work
   if (type === 'cache') {
-    const manifest = payload.map((url) => (
-      {
-        url,
-        revision: null,
-      }
-    ));
-
-    console.log('attempting to precache and route manifest', JSON.stringify(manifest));
-    workbox.precaching.precacheAndRoute(manifest);
+    workbox.precaching.precacheAndRoute(payload);
+    console.log('attempting to precache and route manifest', JSON.stringify(payload));
   }
 });
+
+// This works
+// workbox.precaching.precacheAndRoute([{
+//   url: 'https://media0.giphy.com/media/Ju7l5y9osyymQ/giphy.gif',
+//   revision: null
+// }]);
 
 context.skipWaiting();
